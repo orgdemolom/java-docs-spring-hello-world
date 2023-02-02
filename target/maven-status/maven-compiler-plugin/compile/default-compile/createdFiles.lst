@@ -1,0 +1,9 @@
+com\example\demo\repositories\PRECIO_COMBUSTIBLERepository.class
+com\example\demo\DemoApplication.class
+com\example\demo\controllers\UserController.class
+com\example\demo\security\JWTAuthorizationFilter.class
+com\example\demo\services\PRECIO_COMBUSTIBLEService.class
+com\example\demo\DemoApplication$WebSecurityConfig.class
+com\example\demo\models\PRECIO_COMBUSTIBLE.class
+com\example\demo\controllers\PRECIO_COMBUSTIBLEController.class
+com\example\demo\models\User.class
