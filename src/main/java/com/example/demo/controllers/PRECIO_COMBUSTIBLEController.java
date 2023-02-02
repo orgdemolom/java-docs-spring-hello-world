@@ -18,6 +18,19 @@ public class PRECIO_COMBUSTIBLEController {
 
     @GetMapping()
     public ArrayList<PRECIO_COMBUSTIBLE> getPRECIO_COMBUSTIBLEs(){
-        return precio_COMBUSTIBLEService.getPRECIO_COMBUSTIBLEs();
+        try  
+        {
+            return precio_COMBUSTIBLEService.getPRECIO_COMBUSTIBLEs();
+        }
+        catch(Exception e)
+        {
+            PRECIO_COMBUSTIBLE pc = new PRECIO_COMBUSTIBLE();
+            pc.setDEPARTAMENTO(e.toString());
+            
+            ArrayList<PRECIO_COMBUSTIBLE> list = new ArrayList<PRECIO_COMBUSTIBLE>();
+            
+            list.add(pc);
+            return list;
+        }
     }
 }
