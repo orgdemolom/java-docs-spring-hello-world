@@ -16,15 +16,19 @@ import com.example.demo.models.User;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 @RestController
+@Api(value = "UserController", description = "Operaciones de usuario", tags = "Obtener Token")
 public class UserController {
-    @PostMapping("user")
-    public ResponseEntity<User> login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
+	@PostMapping("/user")
+	@ApiOperation(value = "Iniciar sesión", notes = "Este endpoint permite iniciar sesión en la aplicación")
+	public ResponseEntity<User> login(@ApiParam(value = "Nombre de usuario", required = true) @RequestParam("user") String username, @ApiParam(value = "Contraseña", required = true) @RequestParam("password") String pwd) {
+		System.out.print(username + " " + pwd);
 
-        System.out.print(username + " " + pwd);
-
-        if(username.equals("usuario") && pwd.equals("Pa$$w0rd1")){
+    	if(username.equals("usuario") && pwd.equals("Pa$$w0rd1")){
             String token = getJWTToken(username);
             User user = new User();
             user.setUser(username);

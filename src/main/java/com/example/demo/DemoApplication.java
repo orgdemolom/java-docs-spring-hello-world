@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.security.JWTAuthorizationFilter;
 
@@ -44,7 +45,8 @@ public class DemoApplication {
                 .securityContexts(Arrays.asList(securityContext()))
                 .securitySchemes(Arrays.asList(apiKey()))
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                //.apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -68,13 +70,13 @@ public class DemoApplication {
 
 	private ApiInfo apiInfo(){
         return new ApiInfo(
-                "Spring Boot Blog REST APIs",
-                "Spring Boot Blog REST API Documentation",
+                "API Intégrame",
+                "Servicio que expone datos provenientes de Intégrame",
                 "1",
-                "Terms of service",
-                new Contact("Ramesh Fadatare", "www.javaguides.net", "ramesh@gmail.com"),
-                "License of API",
-                "API license URL",
+                "https://www.minenergia.gov.co/",
+                new Contact("MinEnergia", "https://www.minenergia.gov.co/", "menergia@minenergia.gov.co"),
+                "Licencia API",
+                "https://www.minenergia.gov.co/",
                 Collections.emptyList()
         );
     }
