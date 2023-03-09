@@ -32,5 +32,6 @@ public class PRECIO_COMBUSTIBLEController {
   public ArrayList<PRECIO_COMBUSTIBLE> getPrecioCombustible() {
     return precio_COMBUSTIBLEService.getPRECIO_COMBUSTIBLEs();
   }
+
 }
 

@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -30,17 +32,17 @@ public class PRECIO_COMBUSTIBLE {
     @Column(name = "LONGITUD", columnDefinition = "real", nullable = true)
     private double LONGITUD;
 
-    @Column(name = "DEPARTAMENTO", columnDefinition = "varchar(500)", nullable = false)
+    @Column(name = "DEPARTAMENTO", columnDefinition = "varchar(256)", nullable = true)
     private String DEPARTAMENTO;
 
-    @Column(name = "MUNICIPIO", columnDefinition = "varchar(500)", nullable = false)
+    @Column(name = "MUNICIPIO", columnDefinition = "varchar(256)", nullable = true)
     private String MUNICIPIO;
 
     @Column(name = "PRODUCTO", columnDefinition = "varchar(64)", nullable = true)
     private String PRODUCTO;
 
-    @Column(name = "FECHA_REGISTRO", columnDefinition = "int", nullable = true)
-    private int FECHA_REGISTRO;
+    @Column(name = "FECHA_REGISTRO", columnDefinition = "date", nullable = false)
+    private Date FECHA_REGISTRO;
 
     @Column(name = "VALOR_PRECIO", columnDefinition = "numeric(12,2)", nullable = true)
     private double VALOR_PRECIO;
@@ -120,14 +122,6 @@ public class PRECIO_COMBUSTIBLE {
         PRODUCTO = pRODUCTO;
     }
 
-    public int getFECHA_REGISTRO() {
-        return FECHA_REGISTRO;
-    }
-
-    public void setFECHA_REGISTRO(int fECHA_REGISTRO) {
-        FECHA_REGISTRO = fECHA_REGISTRO;
-    }
-
     public double getVALOR_PRECIO() {
         return VALOR_PRECIO;
     }
@@ -142,5 +136,13 @@ public class PRECIO_COMBUSTIBLE {
 
     public void setPRECIO_PROMEDIO_REPORTADO(double pRECIO_PROMEDIO_REPORTADO) {
         PRECIO_PROMEDIO_REPORTADO = pRECIO_PROMEDIO_REPORTADO;
+    }
+
+    public Date getFECHA_REGISTRO() {
+        return FECHA_REGISTRO;
+    }
+
+    public void setFECHA_REGISTRO(Date fECHA_REGISTRO) {
+        FECHA_REGISTRO = fECHA_REGISTRO;
     }
 }
