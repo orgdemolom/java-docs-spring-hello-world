@@ -52,7 +52,7 @@ public class PRECIO_COMBUSTIBLEController {
   public ArrayList<PRECIO_COMBUSTIBLE> getPrecioCombustible() {
     ArrayList<PRECIO_COMBUSTIBLE> algo = precio_COMBUSTIBLEService.getPRECIO_COMBUSTIBLEs();
     ArrayList<PRECIO_COMBUSTIBLE> primerosMil = new ArrayList<>();
-    for (int i = 0; i < 9000 && i < algo.size(); i++) {
+    for (int i = 0; i < 1000 && i < algo.size(); i++) {
         primerosMil.add(algo.get(i));
     }
       return primerosMil;
