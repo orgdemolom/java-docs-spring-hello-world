@@ -18,16 +18,7 @@ public class PRECIO_COMBUSTIBLEService {
     @Autowired
     PRECIO_COMBUSTIBLERepository precio_COMBUSTIBLERepository;
     
-    @org.springframework.cache.annotation.Cacheable("preciocombustible")
     public ArrayList<PRECIO_COMBUSTIBLE> getPRECIO_COMBUSTIBLEs(){
         return (ArrayList<PRECIO_COMBUSTIBLE>) precio_COMBUSTIBLERepository.findAll();
-    }
-
-    public Page<PRECIO_COMBUSTIBLE> getPRECIO_COMBUSTIBLESPages(org.springframework.data.domain.Pageable pageable){
-        return precio_COMBUSTIBLERepository.findAll(pageable);
-    }
-
-    public Stream<PRECIO_COMBUSTIBLE> getPRECIO_COMBUSTIBLESStream(){
-    return precio_COMBUSTIBLERepository.findAll().stream();
     }
 }

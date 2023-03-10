@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.models.PRECIO_COMBUSTIBLE;
 
 @Repository
-public interface PRECIO_COMBUSTIBLERepository extends JpaRepository<PRECIO_COMBUSTIBLE, Integer>{
-    Page<PRECIO_COMBUSTIBLE> findAll(org.springframework.data.domain.Pageable pageable);    
+public interface PRECIO_COMBUSTIBLERepository extends JpaRepository<PRECIO_COMBUSTIBLE, Integer>{    
 }
