@@ -27,10 +27,10 @@ public class PRECIO_COMBUSTIBLE {
     private String DIRECCION_AGENTE;
 
     @Column(name = "LATITUD", columnDefinition = "real", nullable = true)
-    private Double LATITUD;
+    private double LATITUD;
 
     @Column(name = "LONGITUD", columnDefinition = "real", nullable = true)
-    private Double LONGITUD;
+    private double LONGITUD;
 
     @Column(name = "DEPARTAMENTO", columnDefinition = "varchar(256)", nullable = true)
     private String DEPARTAMENTO;
@@ -45,10 +45,10 @@ public class PRECIO_COMBUSTIBLE {
     private Date FECHA_REGISTRO;
 
     @Column(name = "VALOR_PRECIO", columnDefinition = "numeric(12,2)", nullable = true)
-    private Double VALOR_PRECIO;
+    private double VALOR_PRECIO;
 
     @Column(name = "PRECIO_PROMEDIO_REPORTADO", columnDefinition = "numeric(12,2)", nullable = true)
-    private Double PRECIO_PROMEDIO_REPORTADO;
+    private double PRECIO_PROMEDIO_REPORTADO;
 
     public int getCONSECUTIVO() {
         return CONSECUTIVO;
