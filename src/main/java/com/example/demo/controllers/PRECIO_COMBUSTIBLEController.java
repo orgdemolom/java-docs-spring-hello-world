@@ -58,7 +58,7 @@ public class PRECIO_COMBUSTIBLEController {
       return primerosMil;
   }
 
-  /*@GetMapping("/Paging")
+  @GetMapping("/Paging")
   @ApiOperation(value = "Obtener precios de combustibles Paginados", notes = "Este endpoint devuelve una lista de precios de combustible")
   public String getData(@ApiParam(value = "Pagina", required = true) @RequestParam("page") int page, @ApiParam(value = "Tamaño pagina", required = true) @RequestParam("pageSize") int pageSize) throws Exception {
      // Calcular el índice de inicio y el número de elementos a devolver
@@ -95,7 +95,7 @@ public class PRECIO_COMBUSTIBLEController {
     rootNode.put("totalPages", totalPages);
     // Convertir el objeto JSON a una cadena y devolverlo
     return objectMapper.writeValueAsString(rootNode);
-  }*/
+  }
 
 }
 
