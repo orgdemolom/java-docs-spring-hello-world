@@ -58,6 +58,22 @@ public class PRECIO_COMBUSTIBLEController {
       return primerosMil;
   }
 
+  @GetMapping("error")
+  @ApiOperation(value = "Obtener precios de combustible", notes = "Este endpoint devuelve una lista de precios de combustible")
+  public String getPrecioCombustibleError() {
+    try {
+      ArrayList<PRECIO_COMBUSTIBLE> algo = precio_COMBUSTIBLEService.getPRECIO_COMBUSTIBLEs();
+    ArrayList<PRECIO_COMBUSTIBLE> primerosMil = new ArrayList<>();
+    for (int i = 0; i < 1000 && i < algo.size(); i++) {
+        primerosMil.add(algo.get(i));
+    }
+      return "Ok";
+    } catch (Exception e) {
+      return e.toString();
+    }
+    
+  }
+
   @GetMapping("/Paging")
   @ApiOperation(value = "Obtener precios de combustibles Paginados", notes = "Este endpoint devuelve una lista de precios de combustible")
   public String getData(@ApiParam(value = "Pagina", required = true) @RequestParam("page") int page, @ApiParam(value = "Tamaño pagina", required = true) @RequestParam("pageSize") int pageSize) throws Exception {
