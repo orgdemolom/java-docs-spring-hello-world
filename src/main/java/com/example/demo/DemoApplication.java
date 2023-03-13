@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -70,7 +69,7 @@ public class DemoApplication {
 
 	private ApiInfo apiInfo(){
         return new ApiInfo(
-                "API Intégrame",
+                "API Precio combustibles",
                 "Servicio que expone datos provenientes de Intégrame",
                 "1",
                 "https://www.minenergia.gov.co/",
