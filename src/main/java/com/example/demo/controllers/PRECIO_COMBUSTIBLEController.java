@@ -47,47 +47,9 @@ public class PRECIO_COMBUSTIBLEController {
     for (int i = 0; i < 1000 && i < List.size(); i++) {
         primerosMil.add(List.get(i));
     }
-      return List;
+      return primerosMil;
   }
 
-  /*@GetMapping("/Paging")
-  @ApiOperation(value = "Obtener precios de combustibles Paginados", notes = "Este endpoint devuelve una lista de precios de combustible")
-  public String getData(@ApiParam(value = "Pagina", required = true) @RequestParam("page") int page, @ApiParam(value = "Tamaño pagina", required = true) @RequestParam("pageSize") int pageSize) throws Exception {
-     // Calcular el índice de inicio y el número de elementos a devolver
-    int startIndex = (page - 1) * pageSize;
-    ArrayList<PRECIO_COMBUSTIBLE> algo = precio_COMBUSTIBLEService.getPRECIO_COMBUSTIBLEs();
-    int endIndex = Math.min(startIndex + pageSize, algo.size());
-    // Crear el objeto JSON para la respuesta
-    ObjectMapper objectMapper = new ObjectMapper();
-    ObjectNode rootNode = objectMapper.createObjectNode();
-    ArrayNode dataArray = objectMapper.createArrayNode();
-    rootNode.set("data", dataArray);
-    // Agregar los datos a la respuesta JSON
-    for (int i = startIndex; i < endIndex; i++) {
-      PRECIO_COMBUSTIBLE myData = algo.get(i);
-      ObjectNode dataNode = objectMapper.createObjectNode();
-      dataNode.put("consecutivo", myData.getCONSECUTIVO());
-      dataNode.put("departamento", myData.getDEPARTAMENTO());
-      dataNode.put("direccion_AGENTE", myData.getDIRECCION_AGENTE());
-      dataNode.put("fecha_REGISTRO", myData.getFECHA_REGISTRO().toString());
-      dataNode.put("latitud", myData.getLATITUD());
-      dataNode.put("longitud", myData.getLONGITUD());
-      dataNode.put("municipio", myData.getMUNICIPIO());
-      dataNode.put("nombre_COMERCIAL", myData.getNOMBRE_COMERCIAL());
-      dataNode.put("precio_PROMEDIO_REPORTADO", myData.getPRECIO_PROMEDIO_REPORTADO());
-      dataNode.put("producto", myData.getCONSECUTIVO());
-      dataNode.put("razon_SOCIAL", myData.getRAZON_SOCIAL());
-      dataNode.put("valor_PRECIO", myData.getVALOR_PRECIO());
-      dataArray.add(dataNode);
-    }
-    // Agregar información de paginación a la respuesta JSON
-    int totalPages = (int) Math.ceil((double) algo.size() / pageSize);
-    rootNode.put("page", page);
-    rootNode.put("pageSize", pageSize);
-    rootNode.put("totalPages", totalPages);
-    // Convertir el objeto JSON a una cadena y devolverlo
-    return objectMapper.writeValueAsString(rootNode);
-  }*/
   @GetMapping("/Paging")
   @ApiOperation(value = "Obtener precios de combustibles Paginados", notes = "Este endpoint devuelve una lista de precios de combustible")
   public JsonNode getData(@ApiParam(value = "Pagina", required = true) @RequestParam("page") int page, @ApiParam(value = "Tamaño pagina", required = true) @RequestParam("pageSize") int pageSize) throws Exception {
