@@ -15,7 +15,7 @@ import org.hibernate.annotations.Immutable;
 public class PRECIO_COMBUSTIBLE {
     @Id
     @Column(name = "CONSECUTIVO", columnDefinition = "bigint", nullable = true)
-    private int CONSECUTIVO;
+    private Integer CONSECUTIVO;
 
     @Column(name = "RAZON_SOCIAL", columnDefinition = "varchar(256)", nullable = true)
     private String RAZON_SOCIAL;
@@ -27,10 +27,10 @@ public class PRECIO_COMBUSTIBLE {
     private String DIRECCION_AGENTE;
 
     @Column(name = "LATITUD", columnDefinition = "real", nullable = true)
-    private double LATITUD;
+    private Double LATITUD;
 
     @Column(name = "LONGITUD", columnDefinition = "real", nullable = true)
-    private double LONGITUD;
+    private Double LONGITUD;
 
     @Column(name = "DEPARTAMENTO", columnDefinition = "varchar(256)", nullable = true)
     private String DEPARTAMENTO;
@@ -45,16 +45,16 @@ public class PRECIO_COMBUSTIBLE {
     private Date FECHA_REGISTRO;
 
     @Column(name = "VALOR_PRECIO", columnDefinition = "numeric(12,2)", nullable = true)
-    private double VALOR_PRECIO;
+    private Double VALOR_PRECIO;
 
     @Column(name = "PRECIO_PROMEDIO_REPORTADO", columnDefinition = "numeric(12,2)", nullable = true)
-    private double PRECIO_PROMEDIO_REPORTADO;
+    private Double PRECIO_PROMEDIO_REPORTADO;
 
-    public int getCONSECUTIVO() {
+    public Integer getCONSECUTIVO() {
         return CONSECUTIVO;
     }
 
-    public void setCONSECUTIVO(int cONSECUTIVO) {
+    public void setCONSECUTIVO(Integer cONSECUTIVO) {
         CONSECUTIVO = cONSECUTIVO;
     }
 
@@ -82,19 +82,19 @@ public class PRECIO_COMBUSTIBLE {
         DIRECCION_AGENTE = dIRECCION_AGENTE;
     }
 
-    public double getLATITUD() {
+    public Double getLATITUD() {
         return LATITUD;
     }
 
-    public void setLATITUD(double lATITUD) {
+    public void setLATITUD(Double lATITUD) {
         LATITUD = lATITUD;
     }
 
-    public double getLONGITUD() {
+    public Double getLONGITUD() {
         return LONGITUD;
     }
 
-    public void setLONGITUD(double lONGITUD) {
+    public void setLONGITUD(Double lONGITUD) {
         LONGITUD = lONGITUD;
     }
 
@@ -122,19 +122,19 @@ public class PRECIO_COMBUSTIBLE {
         PRODUCTO = pRODUCTO;
     }
 
-    public double getVALOR_PRECIO() {
+    public Double getVALOR_PRECIO() {
         return VALOR_PRECIO;
     }
 
-    public void setVALOR_PRECIO(double vALOR_PRECIO) {
+    public void setVALOR_PRECIO(Double vALOR_PRECIO) {
         VALOR_PRECIO = vALOR_PRECIO;
     }
 
-    public double getPRECIO_PROMEDIO_REPORTADO() {
+    public Double getPRECIO_PROMEDIO_REPORTADO() {
         return PRECIO_PROMEDIO_REPORTADO;
     }
 
-    public void setPRECIO_PROMEDIO_REPORTADO(double pRECIO_PROMEDIO_REPORTADO) {
+    public void setPRECIO_PROMEDIO_REPORTADO(Double pRECIO_PROMEDIO_REPORTADO) {
         PRECIO_PROMEDIO_REPORTADO = pRECIO_PROMEDIO_REPORTADO;
     }
 
